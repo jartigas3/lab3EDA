@@ -24,7 +24,7 @@ int* readKeysFromFile(std::string filename, int* n_keys){
     delete[] val;
     return keys;
 }
-
+    
 int main(int nargs, char** vargs){
     int n_data = 0;
     int* data = readKeysFromFile("keys_sorted.bin", &n_data);

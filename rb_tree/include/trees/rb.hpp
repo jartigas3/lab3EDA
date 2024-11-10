@@ -12,6 +12,8 @@
 
 namespace trees {
 
+
+// Enumeración para los casos de rotación y balanceo
 enum RotationType{
 	case_1 = 10,
 	case_2 = 20,
@@ -22,21 +24,33 @@ enum RotationType{
 
 class RB {
 private:
-	RBNode* root;
-	/*private methods, rotations*/
-	void balance(RBNode* node);
-	//void do_case_1(RBNode* node);
-	//void do_case_2(RBNode* node);
-	//....
-	RotationType getRotationType(RBNode* node);
+	RBNode* root;  // puntero a la raíz del árbol
+
+    // Métodos privados para balancear el árbol y manejar rotaciones
+    void balance(RBNode* node);
+    RotationType getRotationType(RBNode* node);
+
+	void leftRotate(RBNode* node);
+	void rightRotate(RBNode* node);		
+
+    // Placeholder para los casos de balanceo específicos
+    // void do_case_1(RBNode* node);
+    // void do_case_2(RBNode* node);
+    // ...
+
 public:
 	RB();
+
+	 // Métodos de inserción y búsqueda
 	void insert(int val, RBNode* node);
 	void insert(int val);
 	RBNode* find(int val, RBNode* node);
 	RBNode* find(int val);
+
+	  // Método para recorrer el árbol e imprimir su estructura
 	void traverse(RBNode* node, int level);
 	void traverse();
+
 	virtual ~RB();
 };
 
